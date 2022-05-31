@@ -3,6 +3,28 @@ import validator from "validator"; */
 import React from "react";
 import ReactDOM from "react-dom";
 import IndecisionApp from "./components/IndecisionApp";
+import "./styles/styles.css";
+
+ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
+
+// const Layout = (props) => {
+//   return (
+//     <div>
+//       <p>header</p>
+//       {props.children}
+//       <p>footer</p>
+//     </div>
+//   );
+// };
+
+// const template = (
+//   <div>
+//     <h1>Page Title</h1>
+//     <p>This is my web Page</p>
+//     <div>KOKO MELON</div>
+//   </div>
+// );
+// ReactDOM.render(<Layout>{template}</Layout>, document.getElementById("app"));
 
 /*
 class OldSyntax {
@@ -114,8 +136,6 @@ ReactDOM.render(template, document.getElementById("app"));
 //     );
 //   }
 // }
-
-ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
 
 // const User = (props) => {
 //   return (
