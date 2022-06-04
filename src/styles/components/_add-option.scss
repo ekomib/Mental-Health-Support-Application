@@ -8,13 +8,24 @@
 .add-option {
   display: flex;
   padding: $spacing_l;
+  flex-direction: column;
 }
 
 .input-box {
   flex-grow: 1;
   border: none;
   border-bottom: 4px solid darken(lightblue, 10%);
-  margin-right: $spacing_l;
+  margin: 0 0 $s-size 0;
+  // margin-right: $spacing_l;
   color: darkblue;
   padding: $spacing_l;
+}
+
+@media (min-width: 45rem) {
+  .add-option {
+    flex-direction: row;
+  }
+  .input-box {
+    margin: 0 $s-size 0 0;
+  }
 }
