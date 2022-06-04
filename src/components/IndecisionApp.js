@@ -101,13 +101,26 @@ class IndecisionApp extends React.Component {
     return (
       <div>
         <Header subtitle={subTitle} />
-        <Action btnMode={this.state.options} choiceSupport={this.pickChoice} />
-        <Options
-          handleDeleteSingle={this.handleDeleteSingle}
-          handleDelete={this.handleDelete}
-          options={this.state.options}
-        />
-        <AddOption addOption={this.handleAddOption} />
+        <div className="container">
+          <Action
+            btnMode={this.state.options}
+            choiceSupport={this.pickChoice}
+          />
+          <div className="widget">
+            <Options
+              handleDeleteSingle={this.handleDeleteSingle}
+              handleDelete={this.handleDelete}
+              options={this.state.options}
+            />
+            {this.state.options.length === 0 ? (
+              <p className="widget-message">Input your task to get started</p>
+            ) : (
+              ""
+            )}
+            <AddOption addOption={this.handleAddOption} />
+          </div>
+        </div>
+
         <OptionModal
           clearSelItem={this.handleClearSelState}
           selectedItem={this.state.selectedOption}

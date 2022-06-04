@@ -1,0 +1,31 @@
+.big-button {
+  background-color: darkblue;
+  border: none;
+  border-bottom: 0.6rem solid darken(darkblue, 10%);
+  color: wheat;
+  font-weight: bold;
+  font-size: $spacing_xxl;
+  width: 100%;
+  padding: 2.4rem;
+  margin-bottom: $spacing_xxl;
+}
+
+.big-button:disabled {
+  opacity: 0.5;
+}
+
+.button {
+  background: darkblue;
+  border: none;
+  border-bottom: 0.3rem solid darken(darkblue, 10%);
+  color: wheat;
+  font-weight: 500;
+  padding: $s-size;
+}
+
+.button--link {
+  background: none;
+  border: none;
+  color: $wheat;
+  padding: 0;
+}

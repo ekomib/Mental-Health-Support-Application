@@ -7,20 +7,53 @@ module.exports = {
     filename: "bundle.js",
   },
 
+  // module: {
+  //   rules: [
+  //     {
+  //       loader: "babel-loader",
+  //       test: /\.js$/,
+  //       exclude: /node_modules/,
+  //     },
+  //     {
+  //       test: /\.s[ac]ss$/i,
+  //       use: ["style-loader", "css-loader", "sass-loader"],
+  //     },
+  //   ],
+  // },
+
+  // devtool: "cheap-module-eval-map",
+  // devServer: {
+  //   contentBase: path.join(__dirname, "public"),
+  // },
+
   module: {
     rules: [
       {
-        loader: "babel-loader",
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
-      { test: /\.css$/i, use: ["style-loader", "css-loader"] },
+      {
+        test: /\.s?css$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ],
   },
+  devtool: "cheap-module-source-map",
 
-  devtool: "cheap-module-eval-source-map",
+  mode: "development",
+
   devServer: {
-    contentBase: path.join(__dirname, "public"),
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 9000,
   },
 };
 
