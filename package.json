@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "live-server public/",
-    "build": "webpack",
     "dev-server": "webpack-dev-server"
   },
   "author": "Ekom Ibiok",
